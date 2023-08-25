@@ -1,0 +1,49 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+.side-menu {
+  width: 100%;
+  max-width: 450px;
+  background: #111;
+  padding: 60px 40px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: scroll;
+  height: 100%;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  li {
+    a {
+      position: relative;
+      display: block;
+      font-size: 18px;
+      text-transform: capitalize;
+      color: #ffff;
+      line-height: 1;
+      padding: 10px 0;
+      .icon {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all .5s;
+
+        &:is(.iconrotete) {
+          i {
+            &::before {
+              content: "\f078";
+            }
+          }
+        }
+      }
+    }
+    .submenu {
+      padding: 15px 20px;
+      background: #222;
+      display: none;
+    }
+  }
+}
